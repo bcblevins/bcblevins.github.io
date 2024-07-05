@@ -1,9 +1,42 @@
+@import "https://unpkg.com/open-props";
+
 body {
-    display: flex;
-    .project-tile {
-        width: 200px;
-        height: 200px;
-        background-color: slategray;
-        color: aliceblue;
+    --primary-steel: rgb(186, 213, 239);
+    --subtle-shadow:rgb(60, 77, 94);
+    font-family: var(--font-humanist);
+    background-image: var(--gradient-23);
+    height: 100vh;
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        height: 30vh;
+        color: var(--primary-steel);
+        font-size: var(--font-size-6);
+        h1 {
+            border-radius: 100%;
+            box-shadow: 0 0 50px 50px var(--subtle-shadow); 
+            background-color: var(--subtle-shadow);
+        }
+    }
+
+    main {
+        display: flex;
+        justify-content: space-around;
+
+        .project-tile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            background-color: white;
+
+            h2 {
+                padding-bottom: 50px;
+                z-index: 1;
+            }
+        }
     }
 }
