@@ -2,7 +2,7 @@
 
 body {
     --primary-steel: rgb(186, 213, 239);
-    --subtle-shadow:rgb(60, 77, 94);
+    --subtle-shadow: rgb(60, 77, 94);
     font-family: var(--font-humanist);
     background-image: var(--gradient-23);
     height: 100vh;
@@ -14,29 +14,197 @@ body {
         height: 30vh;
         color: var(--primary-steel);
         font-size: var(--font-size-6);
+
         h1 {
-            border-radius: 100%;
-            box-shadow: 0 0 50px 50px var(--subtle-shadow); 
-            background-color: var(--subtle-shadow);
+            background-image: var(--gradient-29);
+            background-attachment: fixed;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            box-shadow: 0px 12px 10px -10px  rgb(43, 55, 66);
         }
     }
 
     main {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
 
         .project-tile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 200px;
             height: 200px;
-            background-color: white;
+            width: 200px;
+            position: relative;
+            transition: .4s ease;
+            transition-delay: .2s;
+            box-shadow: 0px 20px 10px -10px  rgb(43, 55, 66);
 
             h2 {
-                padding-bottom: 50px;
+                font-size: 2em;
                 z-index: 1;
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                margin: 0px;
+                top: 70px;
+                transition: .4s ease;
+                transition-delay: .2s;
+                color: rgb(78, 92, 107);
+
+            }
+
+            div {
+                background-color: white;
+                position: absolute;
+                transition: .3s ease;
+                transition-delay: .2s;
+                z-index: 0;
+                background-image: var(--gradient-29);
+                background-attachment: fixed;
+    
+            }
+
+            img {
+                object-fit: cover;
+                padding-inline: 10%;
+                padding-top: 15%;
+            }
+
+            .date-stamp-logo {
+                padding-top: 8%;
+                padding-inline: 20%;
+            }
+
+            .cbc-analyzer-logo {
+                padding-top: 11%;
+                padding-inline: 22%;
+
+            }
+
+            .mistvale-logo {
+                padding-top: 12%;
+            }
+
+            .a {
+                top: 0px;
+                left: 0px;
+                height: 50%;
+                width: 100%;
+            }
+
+            .b {
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                width: 50%;
+            }
+
+            .c {
+                top: 0px;
+                right: 0px;
+                height: 100%;
+                width: 50%;
+            }
+
+            .d {
+                left: 0px;
+                bottom: 0px;
+                height: 50%;
+                width: 100%;
+            }
+
+        }
+
+        .project-tile:hover {
+            width: 300px;
+            height: 300px;
+            transition-delay: 0s;
+
+            h2 {
+                padding: 0;
+                top: 250px;
+                transition-delay: 0s;
+            }
+
+            div {
+                transition-delay: .1s;
+            }
+
+            .a {
+                height: 7%;
+            }
+
+            .b {
+                width: 7%
+            }
+
+            .c {
+                width: 7%;
+            }
+
+            .d {
+                height: 20%;
+            }
+        }
+
+        .is-selected:hover{
+            flex-basis: 96%;
+            display: fixed;
+            top: 5vh;
+            height: 90vh;
+
+            .a {
+                height: 2%;
+            }
+
+            .b {
+                width: 3%
+            }
+
+            .c {
+                width: 3%;
+            }
+
+            .d {
+                height: 5%;
+            }
+        }
+
+        .is-selected {
+            flex-basis: 96%;
+            display: fixed;
+            top: 5vh;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 15%;
+                padding-top: 5%;
+                flex-basis: 10%;
+            }
+
+            .a {
+                height: 2%;
+            }
+
+            .b {
+                width: 3%
+            }
+
+            .c {
+                width: 3%;
+            }
+
+            .d {
+                height: 5%;
             }
         }
     }
+
+    .hide {
+        display: none;
+    }
+
 }
+
