@@ -17,7 +17,7 @@ const header = document.querySelector('header');
 vetraCard.addEventListener('click', () => {
     vetraCard.classList.toggle('is-selected');
     vetraHeader.classList.toggle('hide');
-    vetraDescription.classList.toggle('hide');
+    vetraDescription.classList.toggle('show');
     header.classList.toggle('hide');
     dateStampCard.classList.toggle('hide');
     cbcCard.classList.toggle('hide');
