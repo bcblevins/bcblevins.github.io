@@ -3,6 +3,7 @@
 body {
     --primary-steel: rgb(186, 213, 239);
     --subtle-shadow: rgb(60, 77, 94);
+    --description-color: rgb(188, 219, 252);
     font-family: var(--font-humanist);
     background-image: var(--gradient-23);
     height: 100vh;
@@ -111,7 +112,7 @@ body {
                 height: 50%;
                 width: 100%;
             }
-
+            
         }
 
         .project-tile:hover {
@@ -206,5 +207,17 @@ body {
         display: none;
     }
 
+}
+
+.description {
+    padding-inline: 10vw;
+    padding-top: 3vh;
+    font-size: 1.5em;
+    color: var(--description-color);
+
+}
+
+.description:hover {
+    animation: var(--animation-fade-in) forwards;
 }
 
