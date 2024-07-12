@@ -10,18 +10,18 @@
 <body>
     <h1>Websynth</h1>
     <main>
-        <div class="osc sharp" id="noteCSharp"></div>
-        <div class="osc sharp" id="noteDSharp"></div>
-        <div class="osc sharp" id="noteFSharp"></div>
-        <div class="osc sharp" id="noteGSharp"></div>
-        <div class="osc sharp" id="noteASharp"></div>
-        <div class="osc" id="noteC"></div>
-        <div class="osc" id="noteD"></div>
-        <div class="osc" id="noteE"></div>
-        <div class="osc" id="noteF"></div>
-        <div class="osc" id="noteG"></div>
-        <div class="osc" id="noteA"></div>
-        <div class="osc" id="noteB"></div>
+        <div class="osc sharp" id="noteCSharp">W</div>
+        <div class="osc sharp" id="noteDSharp">E</div>
+        <div class="osc sharp" id="noteFSharp">T</div>
+        <div class="osc sharp" id="noteGSharp">Y</div>
+        <div class="osc sharp" id="noteASharp">U</div>
+        <div class="osc" id="noteC">A</div>
+        <div class="osc" id="noteD">S</div>
+        <div class="osc" id="noteE">D</div>
+        <div class="osc" id="noteF">F</div>
+        <div class="osc" id="noteG">G</div>
+        <div class="osc" id="noteA">H</div>
+        <div class="osc" id="noteB">J</div>
     </main>
 
 
@@ -95,6 +95,62 @@
             voice2.disconnect();
         }
     }
+
+    document.addEventListener('keydown', (event) => {
+        let pitch = noteC;
+        console.log(event.code);
+        if (event.code == "KeyA") {
+            pitch = noteC;
+            console.log("C");
+        } else if (event.code == "KeyW") {
+            pitch = noteCSharp;
+            console.log("C#");
+        } else if (event.code == "KeyS") {
+            pitch = noteD;
+            console.log("D");
+        } else if (event.code == "KeyE") {
+            pitch = noteDSharp;
+        } else if (event.code == "KeyD") {
+            pitch = noteE;
+        } else if (event.code == "KeyF") {
+            pitch = noteF;
+        } else if (event.code == "KeyT") {
+            pitch = noteFSharp;
+        } else if (event.code == "KeyG") {
+            pitch = noteG;
+        } else if (event.code == "KeyY") {
+            pitch = noteGSharp;
+        } else if (event.code == "KeyH") {
+            pitch = noteA;
+        } else if (event.code == "KeyU") {
+            pitch = noteASharp;
+        } else if (event.code == "KeyJ") {
+            pitch = noteB;
+        } else {
+            return;
+        }
+
+        voice1 = context.createOscillator(); // Creates the oscillator
+        voice1.type = "sawtooth";
+        voice1.frequency.value = pitch;
+        voice1.connect(context.destination);
+        // Connects it to output
+        voice1.start(context.currentTime);
+
+        voice2 = context.createOscillator(); // Creates the oscillator
+        voice2.type = "sawtooth";
+        voice2.frequency.value = pitch + 3;
+        voice2.connect(context.destination);
+        // Connects it to output
+        voice2.start(context.currentTime);
+
+
+    })
+
+    document.addEventListener('keyup', (event) => {
+        voice1.disconnect();
+        voice2.disconnect();
+    })
 </script>
 
 <style>
@@ -113,15 +169,17 @@
         }
 
     }
+
     main {
         width: 714px;
         height: 400px;
         display: grid;
         grid-template-columns: repeat(21, 1fr);
         grid-template-rows: 1fr 1fr;
-        grid-template-areas: 
-        ". . cS cS . dS dS . . . . fS fS . gS gS . aS aS . ."
-        "c c c d d d e e e f f f g g g a a a b b b";
+        grid-template-areas:
+            ". . cS cS . dS dS . . . . fS fS . gS gS . aS aS . ."
+            "c c c d d d e e e f f f g g g a a a b b b";
+
         .osc {
             width: 100px;
             height: 200px;
@@ -136,6 +194,7 @@
         .sharp {
             background-color: black;
             width: 50px;
+            color: white;
         }
 
         #noteC {
