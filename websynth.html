@@ -23,6 +23,14 @@
         <div class="osc" id="noteA">H</div>
         <div class="osc" id="noteB">J</div>
     </main>
+    <h2>Type the above letters or click a key to play </h2>
+    <h3>Don't press multiple keys at once</h3>
+    <aside>
+        <span>Octave: </span>
+        <button class="octave-down">-</button>
+        <button class="octave-up">+</button>
+    </aside>
+
 
 
 </body>
@@ -30,21 +38,44 @@
 <script>
     context = new AudioContext();
     let osc = document.querySelectorAll(".osc");
+    const octaveUp = document.querySelector(".octave-up");
+    const octaveDown = document.querySelector(".octave-down");
+
     let voice1;
     let voice2;
 
-    const noteC = 523.25;
-    const noteCSharp = 554.37;
-    const noteD = 587.33;
-    const noteDSharp = 622.25;
-    const noteE = 659.25;
-    const noteF = 698.46;
-    const noteFSharp = 739.99;
-    const noteG = 783.99;
-    const noteGSharp = 830.61;
-    const noteA = 880.00;
-    const noteASharp = 932.33;
-    const noteB = 987.77;
+    let notes = [];
+
+    const noGain = context.createGain();
+    noGain.gain.value = 0;
+
+    let noteC = 523.25;
+    let noteCSharp = 554.37;
+    let noteD = 587.33;
+    let noteDSharp = 622.25;
+    let noteE = 659.25;
+    let noteF = 698.46;
+    let noteFSharp = 739.99;
+    let noteG = 783.99;
+    let noteGSharp = 830.61;
+    let noteA = 880.00;
+    let noteASharp = 932.33;
+    let noteB = 987.77;
+
+    notes.push(noteC, noteCSharp, noteD, noteDSharp, noteE, noteF, noteFSharp, noteG, noteGSharp, noteA, noteASharp, noteB);
+
+    const keyC = document.getElementById("noteC");
+    const keyCSharp = document.getElementById("noteCSharp");
+    const keyD = document.getElementById("noteD");
+    const keyDSharp = document.getElementById("noteDSharp");
+    const keyE = document.getElementById("noteE");
+    const keyF = document.getElementById("noteF");
+    const keyFSharp = document.getElementById("noteFSharp");
+    const keyG = document.getElementById("noteG");
+    const keyGSharp = document.getElementById("noteGSharp");
+    const keyA = document.getElementById("noteA");
+    const keyASharp = document.getElementById("noteASharp");
+    const keyB = document.getElementById("noteB");
 
     for (let i = 0; i < osc.length; i++) {
         let o = osc[i];
@@ -98,16 +129,12 @@
 
     document.addEventListener('keydown', (event) => {
         let pitch = noteC;
-        console.log(event.code);
         if (event.code == "KeyA") {
             pitch = noteC;
-            console.log("C");
         } else if (event.code == "KeyW") {
             pitch = noteCSharp;
-            console.log("C#");
         } else if (event.code == "KeyS") {
             pitch = noteD;
-            console.log("D");
         } else if (event.code == "KeyE") {
             pitch = noteDSharp;
         } else if (event.code == "KeyD") {
@@ -151,6 +178,17 @@
         voice1.disconnect();
         voice2.disconnect();
     })
+
+    octaveUp.addEventListener('click', () => {
+        console.log(notes);
+        notes = notes.map(input => input * 2); 
+        console.log(notes);
+    });
+
+    octaveDown.addEventListener('click', () => {
+        notes = notes.map(input => input / 2); 
+    });
+
 </script>
 
 <style>
@@ -188,13 +226,17 @@
         }
 
         .osc:active {
-            opacity: 0.5;
+            background-color: lightgray;
         }
 
         .sharp {
             background-color: black;
             width: 50px;
             color: white;
+        }
+
+        .sharp:active {
+            background-color: rgb(74, 74, 74);
         }
 
         #noteC {
@@ -246,6 +288,13 @@
         }
 
 
+    }
+
+    button {
+        display: inline;
+        background-color: white;
+        width: 50px;
+        font-weight: 700;
     }
 </style>
 
