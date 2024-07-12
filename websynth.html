@@ -81,29 +81,29 @@
         let o = osc[i];
         let pitch = noteC;
         if (o.id == "noteC") {
-            pitch = noteC;
+            pitch = notes[0] * octave;
         } else if (o.id == "noteCSharp") {
-            pitch = noteCSharp;
+            pitch = notes[1];
         } else if (o.id == "noteD") {
-            pitch = noteD;
+            pitch = notes[2];
         } else if (o.id == "noteDSharp") {
-            pitch = noteDSharp;
+            pitch = notes[3];
         } else if (o.id == "noteE") {
-            pitch = noteE;
+            pitch = notes[4];
         } else if (o.id == "noteF") {
-            pitch = noteF;
+            pitch = notes[5];
         } else if (o.id == "noteFSharp") {
-            pitch = noteFSharp;
+            pitch = notes[6];
         } else if (o.id == "noteG") {
-            pitch = noteG;
+            pitch = notes[7];
         } else if (o.id == "noteGSharp") {
-            pitch = noteGSharp;
+            pitch = notes[8];
         } else if (o.id == "noteA") {
-            pitch = noteA;
+            pitch = notes[9];
         } else if (o.id == "noteASharp") {
-            pitch = noteASharp;
+            pitch = notes[10];
         } else if (o.id == "noteB") {
-            pitch = noteB;
+            pitch = notes[11];
         }
         o.onmousedown = function () {
             voice1 = context.createOscillator(); // Creates the oscillator
@@ -130,32 +130,37 @@
     document.addEventListener('keydown', (event) => {
         let pitch = noteC;
         if (event.code == "KeyA") {
-            pitch = noteC;
+            pitch = notes[0];
+            console.log(pitch);
+            console.log(noteC);
         } else if (event.code == "KeyW") {
-            pitch = noteCSharp;
+            pitch = notes[1];
         } else if (event.code == "KeyS") {
-            pitch = noteD;
+            pitch = notes[2];
         } else if (event.code == "KeyE") {
-            pitch = noteDSharp;
+            pitch = notes[3];
         } else if (event.code == "KeyD") {
-            pitch = noteE;
+            pitch = notes[4];
         } else if (event.code == "KeyF") {
-            pitch = noteF;
+            pitch = notes[5];
         } else if (event.code == "KeyT") {
-            pitch = noteFSharp;
+            pitch = notes[6];
         } else if (event.code == "KeyG") {
-            pitch = noteG;
+            pitch = notes[7];
         } else if (event.code == "KeyY") {
-            pitch = noteGSharp;
+            pitch = notes[8];
         } else if (event.code == "KeyH") {
-            pitch = noteA;
+            pitch = notes[9];
         } else if (event.code == "KeyU") {
-            pitch = noteASharp;
+            pitch = notes[10];
         } else if (event.code == "KeyJ") {
-            pitch = noteB;
+            pitch = notes[11];
         } else {
             return;
         }
+
+        console.log("Pitch: " + pitch + " Hz");
+
 
         voice1 = context.createOscillator(); // Creates the oscillator
         voice1.type = "sawtooth";
@@ -180,9 +185,7 @@
     })
 
     octaveUp.addEventListener('click', () => {
-        console.log(notes);
         notes = notes.map(input => input * 2); 
-        console.log(notes);
     });
 
     octaveDown.addEventListener('click', () => {
