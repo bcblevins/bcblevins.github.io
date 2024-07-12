@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Websynth</h1>
+    <main>
+        <div class="osc sharp" id="noteCSharp"></div>
+        <div class="osc sharp" id="noteDSharp"></div>
+        <div class="osc sharp" id="noteFSharp"></div>
+        <div class="osc sharp" id="noteGSharp"></div>
+        <div class="osc sharp" id="noteASharp"></div>
+        <div class="osc" id="noteC"></div>
+        <div class="osc" id="noteD"></div>
+        <div class="osc" id="noteE"></div>
+        <div class="osc" id="noteF"></div>
+        <div class="osc" id="noteG"></div>
+        <div class="osc" id="noteA"></div>
+        <div class="osc" id="noteB"></div>
+    </main>
+
+
+</body>
+
+<script>
+    context = new AudioContext();
+    let osc = document.querySelectorAll(".osc");
+    let voice1;
+    let voice2;
+
+    const noteC = 523.25;
+    const noteCSharp = 554.37;
+    const noteD = 587.33;
+    const noteDSharp = 622.25;
+    const noteE = 659.25;
+    const noteF = 698.46;
+    const noteFSharp = 739.99;
+    const noteG = 783.99;
+    const noteGSharp = 830.61;
+    const noteA = 880.00;
+    const noteASharp = 932.33;
+    const noteB = 987.77;
+
+    for (let i = 0; i < osc.length; i++) {
+        let o = osc[i];
+        let pitch = noteC;
+        if (o.id == "noteC") {
+            pitch = noteC;
+        } else if (o.id == "noteCSharp") {
+            pitch = noteCSharp;
+        } else if (o.id == "noteD") {
+            pitch = noteD;
+        } else if (o.id == "noteDSharp") {
+            pitch = noteDSharp;
+        } else if (o.id == "noteE") {
+            pitch = noteE;
+        } else if (o.id == "noteF") {
+            pitch = noteF;
+        } else if (o.id == "noteFSharp") {
+            pitch = noteFSharp;
+        } else if (o.id == "noteG") {
+            pitch = noteG;
+        } else if (o.id == "noteGSharp") {
+            pitch = noteGSharp;
+        } else if (o.id == "noteA") {
+            pitch = noteA;
+        } else if (o.id == "noteASharp") {
+            pitch = noteASharp;
+        } else if (o.id == "noteB") {
+            pitch = noteB;
+        }
+        o.onmousedown = function () {
+            voice1 = context.createOscillator(); // Creates the oscillator
+            voice1.type = "sawtooth";
+            voice1.frequency.value = pitch;
+            voice1.connect(context.destination);
+            // Connects it to output
+            voice1.start(context.currentTime);
+
+            voice2 = context.createOscillator(); // Creates the oscillator
+            voice2.type = "sawtooth";
+            voice2.frequency.value = pitch + 3;
+            voice2.connect(context.destination);
+            // Connects it to output
+            voice2.start(context.currentTime);
+        };
+
+        o.onmouseup = function () {
+            voice1.disconnect();
+            voice2.disconnect();
+        }
+    }
+</script>
+
+<style>
+    body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: gray;
+        font-family: sans-serif;
+
+        h1 {
+            font-size: 4em;
+            color: white;
+            margin: 0%;
+        }
+
+    }
+    main {
+        width: 714px;
+        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(21, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        ". . cS cS . dS dS . . . . fS fS . gS gS . aS aS . ."
+        "c c c d d d e e e f f f g g g a a a b b b";
+        .osc {
+            width: 100px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        .osc:active {
+            opacity: 0.5;
+        }
+
+        .sharp {
+            background-color: black;
+            width: 50px;
+        }
+
+        #noteC {
+            grid-area: c;
+        }
+
+        #noteCSharp {
+            grid-area: cS;
+        }
+
+        #noteD {
+            grid-area: d;
+        }
+
+        #noteDSharp {
+            grid-area: dS;
+        }
+
+        #noteE {
+            grid-area: e;
+        }
+
+        #noteF {
+            grid-area: f;
+        }
+
+        #noteFSharp {
+            grid-area: fS;
+        }
+
+        #noteG {
+            grid-area: g;
+        }
+
+        #noteGSharp {
+            grid-area: gS;
+        }
+
+        #noteA {
+            grid-area: a;
+        }
+
+        #noteASharp {
+            grid-area: aS;
+        }
+
+        #noteB {
+            grid-area: b;
+        }
+
+
+    }
+</style>
+
+</html>

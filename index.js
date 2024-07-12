@@ -11,6 +11,9 @@ const dateStampCard = document.querySelector('.date-stamp');
 const cbcCard = document.querySelector('.cbc');
 const mistvaleCard = document.querySelector('.mistvale');
 
+const websynthCard = document.querySelector('.websynth');
+const websynthHeader = document.querySelector('.websynth-header');
+
 const header = document.querySelector('header');
 
 vetraCard.addEventListener('click', () => {
@@ -24,3 +27,6 @@ vetraCard.addEventListener('click', () => {
     console.log('vetra');
 });
 
+websynthCard.addEventListener('click', () => {
+    window.location.href = './websynth.html';
+});
