@@ -2,14 +2,15 @@
   <div id="home-view">
     <header>
       <h1 id="greeting" v-if="showGreeting" :class=" {'visible': showGreeting} " > <span>Hello.</span></h1>
-      <h1 id="my-name" v-if="!showGreeting" :class=" {'visible': !showGreeting} " >
+      <h1 id="my-name" v-if="!showGreeting" :class=" {'visible': !showGreeting, 'hide': hidden} " >
         My name is 
         <span id="name">Beau Blevins.</span>
         <br>
-        <span id="i-am">I am a full stack software developer.</span>
+        <span id="i-am">I'm a full stack software developer.</span>
       </h1>
-      <div id="portal" v-if="showPortal"></div>
-      <div id="cover" v-if="showPortal" ></div>
+      <div id="portal" v-if="showPortal" :class=" {'hide': hidden} " ></div>
+      <div id="cover"  ></div>
+      <button id="about-me" v-if="showButton" @click="gotToAbout" >About Me</button>
     </header>
     <main>
       <p>
@@ -50,20 +51,32 @@
 import { ref } from 'vue';
 
 const showGreeting = ref(true);
+const showButton = ref(false);
+const showPortal = ref(true);
+const hidden = ref(false);
 
 const toggleGreeting = () => {
-  showGreeting.value = !showGreeting.value
+  showGreeting.value = !showGreeting.value;
 }
 
 const togglePortal = () => {
-  showPortal.value = !showPortal.value
+  showPortal.value = !showPortal.value;
 }
 
-const showPortal = ref(true)
+const toggleButton = () => {
+  showButton.value = !showButton.value;
+}
+
+const gotToAbout = () => {
+  togglePortal();
+  hidden.value = true;
+  setTimeout(togglePortal, 1000)
+}
 
 
 setTimeout(toggleGreeting, 3000)
 setTimeout(togglePortal, 4000)
+setTimeout(toggleButton, 4500)
 
 </script>
 
@@ -96,11 +109,38 @@ setTimeout(togglePortal, 4000)
   0%{
     transform: scale(0);
   }
-  10%, 90% {
+  7%, 90% {
     transform: scale(1);
   }
   100% {
     transform: scale(0);
+
+  }
+}
+
+@keyframes fade-in-with-shadow {
+  0% {
+    opacity: 0;
+    box-shadow: 0px 0px 0px 0px #1097f8;
+  }
+  50% {
+    box-shadow: 0px 0px 0px 0px #1097f8;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+
+    box-shadow: 0px 2px 7px -2px #1097f8;
+
+  }
+}
+
+@keyframes slide-down-out {
+  0% {
+    transform: translateY(0vh);
+  }
+  100% {
+    transform: translateY(20vh);
   }
 }
 
@@ -135,13 +175,40 @@ setTimeout(togglePortal, 4000)
       bottom: 50%;
     }
 
+    #my-name{
+      animation: slide-in-up .8s ease ;
+      position: absolute;
+      bottom: 50%;
+    }
+    #name {
+      font-size: 40px;
+        background-image: linear-gradient(to bottom left, #007acc, #035ebf);
+        color: transparent;
+        background-clip: text;
+        text-shadow: 3px 3px 0 rgba(70, 70, 70, 0.213);
+    
+    }
+    #i-am {
+      font-size: 30px;
+    }
+
     #portal {
-      width: 40vw;
+      width: 50vw;
       z-index: 1001;
-      border-top: 5px solid black;
+      border-top: 5px solid rgb(0, 0, 0);
       animation: scale-in-out 4s ease;
       position: absolute;
       top: 50%;
+    }
+
+    #portal.hide {
+      animation: scale-in-out 1s ease;
+    }
+
+    #my-name.hide {
+      animation: slide-down-out .4s;
+      animation-delay: .2s;
+      transform: translateY(20vh);
     }
 
     #cover {
@@ -153,16 +220,29 @@ setTimeout(togglePortal, 4000)
       top: 50%;
     }
 
-    #my-name{
-      animation: slide-in-up .8s ease ;
+
+
+    #about-me {
       position: absolute;
-      bottom: 50%;
+      top: calc(50% + 20px);
+      padding: 20px;
+      padding-block: 5px;
+      font-size: 20px;
+      background: transparent;
+      color: var(--foreground-color-1);
+      border: 2px solid #005999;
+      border-radius: 3px;
+      box-shadow: 0px 2px 7px -2px  #1097f8;
+      animation: fade-in-with-shadow 1s ease;
+      transition: all .2s;
+      z-index: 1001;
     }
-    #name {
-      font-size: 40px;
-    }
-    #i-am {
-      font-size: 30px;
+
+    #about-me:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      box-shadow: 0px 0px 7px 0px  #1097f8;
+
     }
 
 

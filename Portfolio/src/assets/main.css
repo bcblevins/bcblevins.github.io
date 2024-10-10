@@ -3,6 +3,7 @@
 
 body * {
     --background-color-1: rgb(226, 238, 238);
+    --foreground-color-1: #035ebf;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
