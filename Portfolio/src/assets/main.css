@@ -1,0 +1,12 @@
+@import "https://unpkg.com/open-props";
+
+
+body * {
+    --background-color-1: rgb(226, 238, 238);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
