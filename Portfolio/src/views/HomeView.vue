@@ -10,7 +10,7 @@
       </h1>
       <div id="portal" v-if="showPortal" :class=" {'hide': hidden} " ></div>
       <div id="cover"  ></div>
-      <button id="about-me" v-if="showButton" @click="gotToAbout" >About Me</button>
+      <button id="about-me" v-if="showButton" @click="leaveHome" >About Me</button>
     </header>
     <main>
       <p>
@@ -49,6 +49,9 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const showGreeting = ref(true);
 const showButton = ref(false);
@@ -67,10 +70,16 @@ const toggleButton = () => {
   showButton.value = !showButton.value;
 }
 
-const gotToAbout = () => {
+const leaveHome = () => {
   togglePortal();
+  toggleButton();
   hidden.value = true;
-  setTimeout(togglePortal, 1000)
+  setTimeout(goToAbout, 500);
+}
+
+const goToAbout = () => {
+  togglePortal();
+  setTimeout(router.push('/about', 1000))
 }
 
 
@@ -139,7 +148,7 @@ setTimeout(toggleButton, 4500)
   0% {
     transform: translateY(0vh);
   }
-  100% {
+  50%, 100% {
     transform: translateY(20vh);
   }
 }
@@ -206,9 +215,8 @@ setTimeout(toggleButton, 4500)
     }
 
     #my-name.hide {
-      animation: slide-down-out .4s;
+      animation: slide-down-out 1s;
       animation-delay: .2s;
-      transform: translateY(20vh);
     }
 
     #cover {
