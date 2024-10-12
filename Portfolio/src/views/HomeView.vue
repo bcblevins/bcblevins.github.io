@@ -74,12 +74,12 @@ const leaveHome = () => {
   togglePortal();
   toggleButton();
   hidden.value = true;
-  setTimeout(goToAbout, 500);
+  setTimeout(goToPortfolio, 500);
 }
 
-const goToAbout = () => {
+const goToPortfolio = () => {
   togglePortal();
-  setTimeout(router.push('/about', 1000))
+  setTimeout(router.push('/portfolio', 1000))
 }
 
 

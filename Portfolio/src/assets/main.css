@@ -4,6 +4,7 @@
 body * {
     --background-color-1: rgb(226, 238, 238);
     --foreground-color-1: #035ebf;
+    --background-gradient-1: linear-gradient(to bottom, rgb(226, 237, 237), rgb(158, 189, 189));
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
