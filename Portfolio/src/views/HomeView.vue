@@ -12,7 +12,7 @@
       <div id="cover"  ></div>
       <button id="about-me" v-if="showButton" @click="leaveHome" >About Me</button>
     </header>
-    <main>
+    <!-- <main>
       <p>
         I'm a Full Stack Developer with a passion for building scalable, efficient solutions that
         empower users.
@@ -42,7 +42,7 @@
           <img src="../assets/img/Date-Stamp-Preview.png" alt="Date Stamp Preview" id="date-stamp-preview">
         </li>
       </ul>
-    </main>
+    </main> -->
   </div>
 
 </template>
@@ -172,7 +172,7 @@ setTimeout(toggleButton, 4500)
 
     .visible {
       opacity: 1;
-      transition: all 1s;
+      /*transition: all 1s; */
     }
 
     #greeting {
@@ -204,7 +204,7 @@ setTimeout(toggleButton, 4500)
     #portal {
       width: 50vw;
       z-index: 1001;
-      border-top: 5px solid rgb(0, 0, 0);
+      border-top: 2px solid rgb(0, 0, 0);
       animation: scale-in-out 4s ease;
       position: absolute;
       top: 50%;

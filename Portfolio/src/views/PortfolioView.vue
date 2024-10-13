@@ -33,7 +33,16 @@
                     ratione corrupti possimus.</p>
             </aside>
             <section>
-                <img src="" alt="VetRA Image">
+                <img src="../assets/img/VetRA-Preview.png" alt="VetRA Image">
+                <div class="icon-container">
+                    <img src="../assets/img/icons/java-logo.svg" alt="">
+                    <img src="../assets/img/icons/Spring-Boot-logo.png" alt="">
+                    <img src="../assets/img/icons/PostgreSQL-logo.png" alt="">
+                    <img src="../assets/img/icons/vue-logo.svg" alt="">
+                    <img src="../assets/img/icons/JavaScript-logo.png" alt="">
+                    <img src="../assets/img/icons/HTML5-logo.png" alt="">
+                    <img src="../assets/img/icons/css-logo.png" alt="">
+                </div>
             </section>
         </div>
         <div id="kennel-map" class="project-view">
@@ -46,7 +55,14 @@
 
             </aside>
             <section>
-<img src="" alt="Kennel Map Image">
+                <img src="../assets/img/Kennel-Map-Preview.png" alt="Kennel Map Image">
+                <div class="icon-container">
+                    <img src="../assets/img/icons/vue-logo.svg" alt="">
+                    <img src="../assets/img/icons/supabase-logo.png" alt="">
+                    <img src="../assets/img/icons/JavaScript-logo.png" alt="">
+                    <img src="../assets/img/icons/HTML5-logo.png" alt="">
+                    <img src="../assets/img/icons/css-logo.png" alt="">
+                </div>
             </section>
         </div>
         <div id="date-stamp" class="project-view">
@@ -60,7 +76,13 @@
 
             </aside>
             <section>
-                <img src="" alt="Date Stamp Image">
+                <img src="../assets/img/Date-Stamp-Preview.png" alt="Date Stamp Image">
+                <div class="icon-container">
+                    <img src="../assets/img/icons/Chrome-logo.png" alt="">
+                    <img src="../assets/img/icons/JavaScript-logo.png" alt="">
+                    <img src="../assets/img/icons/HTML5-logo.png" alt="">
+                    <img src="../assets/img/icons/css-logo.png" alt="">
+                </div>
             </section>
         </div>
     </div>
@@ -97,12 +119,13 @@
     }
 
     .project-view {
-        width: 100vw;
+        max-width: 100vw;
         height: 100vh;
         display: grid;
         grid-template-columns: 1fr 2fr;
         scroll-snap-align: center;
-        padding-inline: 40px;
+        padding-left: 40px;
+        margin: 0px;
 
         aside {
             background-color: rgba(18, 18, 35, 0.52);
@@ -114,12 +137,33 @@
             }
 
 
+
+
         }
 
         section {
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+            flex-direction: column;
+
+            img {
+                width: calc(100% - 40px);
+            }
+
+            .icon-container {
+
+                img {
+                    height: 100px;
+                    width: auto;
+                    border-radius: 20px;
+                    margin: 10px;
+                    background-color: rgb(255, 255, 255);
+                    padding: 5px;
+                }
+
+            }
         }
     }
 }
@@ -127,5 +171,5 @@
 #portfolio:hover {
     /* Move the background while scrolling (simulated parallax effect) */
     background-position: 0% 100;
-  }
+}
 </style>
