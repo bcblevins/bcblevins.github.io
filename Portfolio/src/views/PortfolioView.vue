@@ -21,12 +21,14 @@
         <div id="vetra" class="project-view">
             <aside>
                 <h2>VetRA</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo fuga corporis eligendi aperiam
-                    officiis doloremque illum, voluptates cum blanditiis.</p>
+                <p>VetRA is a full stack application aimed at improving communication between
+                    veterinary clinics and clients by providing a messaging platform and enabling direct access to pet
+                    medical records.
+                </p>
                 <h3>API</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est veritatis odit harum reiciendis iusto
-                    velit eum provident maiores deserunt placeat consequatur, officia tempora quos vel debitis nobis
-                    ratione corrupti possimus.</p>
+                <p>The VetRA API is a Java/Spring Boot/PostgreSQL application featuring a rich authorization infrastructure
+                    and 
+                </p>
                 <h3>App</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est veritatis odit harum reiciendis iusto
                     velit eum provident maiores deserunt placeat consequatur, officia tempora quos vel debitis nobis
@@ -124,6 +126,7 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
         scroll-snap-align: center;
+        scroll-snap-stop: always;
         padding-left: 40px;
         margin: 0px;
 
@@ -135,10 +138,6 @@
             h2 {
                 text-align: center;
             }
-
-
-
-
         }
 
         section {
@@ -153,14 +152,17 @@
             }
 
             .icon-container {
+                display: flex;
+                justify-content: center;
 
                 img {
-                    height: 100px;
+                    max-height: 100px;
                     width: auto;
                     border-radius: 20px;
                     margin: 10px;
                     background-color: rgb(255, 255, 255);
                     padding: 5px;
+                    flex-shrink: 1;
                 }
 
             }
