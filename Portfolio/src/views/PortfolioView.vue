@@ -2,37 +2,34 @@
     <div id="portfolio">
         <div id="about-view">
             <p>
-                I'm a Full Stack Developer with a passion for building scalable, efficient solutions that
-                empower users.
+                I'm a Full Stack Developer with a passion for building useful, scalable software that
+                are a joy for users to interact with. I approach challenges without hesitation, leveraging
+                my technical expertise, creativity, and love of problem solving to produce results.
                 <br>
-                With experience in technologies like Java, Spring Boot, PostgreSQL, Python, and Vue.js, I enjoy
-                tackling
-                complex challenges and delivering creative, impactful results.
-                <br>
-                One of my key projects, VetRA, showcases my
-                ability
-                to create full stack applications that solve real-world problems, such as improving communication
-                between
-                veterinary clinics and their clients. I approach challenges without hesitation, applying both technical
-                expertise
-                and a creativity to deliver impactful results.
+                I currently have experience with Java, Spring Boot, PostgreSQL, Python, Vue.js, and more. As a lifelong
+                learner, I continually challenge myself to expand my skill set.
             </p>
         </div>
         <div id="vetra" class="project-view">
             <aside>
                 <h2>VetRA</h2>
-                <p>VetRA is a full stack application aimed at improving communication between
+                <p>
+                    VetRA is a full stack application aimed at improving communication between
                     veterinary clinics and clients by providing a messaging platform and enabling direct access to pet
                     medical records.
                 </p>
                 <h3>API</h3>
-                <p>The VetRA API is a Java/Spring Boot/PostgreSQL application featuring a rich authorization infrastructure
-                    and 
+                <p>
+                    The VetRA API is a secure backend built with Java, Spring Boot, and PostgreSQL. It supports
+                    integration with the ezyVet API to automate access to pet medical records. It features strong
+                    authorization controls to serve the VetRA app's different user types.
                 </p>
                 <h3>App</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est veritatis odit harum reiciendis iusto
-                    velit eum provident maiores deserunt placeat consequatur, officia tempora quos vel debitis nobis
-                    ratione corrupti possimus.</p>
+                <p>
+                    The VetRA Frontend is a responsive web application built with Vue.js, designed to give pet owners
+                    secure access to their pets' medical records. It enables users to view lab results, track
+                    medications, request refills, and communicate directly with their veterinary clinic.
+                </p>
             </aside>
             <section>
                 <img src="../assets/img/VetRA-Preview.png" alt="VetRA Image">
@@ -50,10 +47,12 @@
         <div id="kennel-map" class="project-view">
             <aside>
                 <h2>Kennel Map</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo fuga corporis eligendi aperiam
-                    officiis doloremque illum, voluptates cum blanditiis. Lorem, ipsum dolor sit amet consectetur
-                    adipisicing elit. Maxime nulla, debitis labore iure ducimus, incidunt rem corrupti maiores unde id
-                    impedit soluta! Eligendi, quisquam minus facilis sed nobis molestias eius.</p>
+                <p>
+                    Kennel Map is a full stack web application developed for Companion Animal Hospital to track and
+                    manage dog locations within the kennel. Built with Vue.js and Supabase/PostgreSQL, it allows users
+                    to easily assign dogs to kennel runs and rearrange them using a drag-and-drop interface. Users can
+                    also save kennel layouts to help plan for busy periods.
+                </p>
 
             </aside>
             <section>
@@ -71,10 +70,13 @@
 
             <aside>
                 <h2>Date Stamp</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo fuga corporis eligendi aperiam
-                    officiis doloremque illum, voluptates cum blanditiis. Lorem, ipsum dolor sit amet consectetur
-                    adipisicing elit. Maxime nulla, debitis labore iure ducimus, incidunt rem corrupti maiores unde id
-                    impedit soluta! Eligendi, quisquam minus facilis sed nobis molestias eius.</p>
+                <p>
+                    Date Stamp is a browser extension created for Companion Animal Hospital to enhance the
+                    record-keeping capabilities of the ezyVet electronic medical records system. Initially developed as
+                    a simple timestamp tool, it has evolved to include multiple text insertion features and the ability
+                    to inject custom styles into the ezyVet interface, automatically highlighting records that meet
+                    time-sensitive criteria.
+                </p>
 
             </aside>
             <section>
