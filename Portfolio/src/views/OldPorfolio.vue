@@ -1,6 +1,6 @@
 <template>
     <div id="portfolio">
-        <div id="welcome" :class="{ 'dark': darken }">
+        <div id="welcome">
             <h1 id="greeting" v-if="showGreeting" :class="{ 'visible': showGreeting }"> <span>Hello.</span></h1>
             <h1 id="my-name" v-if="!showGreeting" :class="{ 'visible': !showGreeting, 'hide': hidden }">
                 My name is
@@ -12,46 +12,39 @@
             <div id="cover"></div>
             <button id="about-me-button" v-if="showButton" @click="gotToAboutMe">About Me</button>
         </div>
-        <!-- <div id="welcome-spacer"  >
+        <div id="welcome-spacer">
 
-        </div> -->
+        </div>
         <div id="about-view" class="view">
             <p ref="about-me">
                 I'm a Full Stack Developer with a passion for building useful, scalable software that
                 are a joy for users to interact with. I approach challenges without hesitation, leveraging
                 my technical expertise, creativity, and love of problem solving to produce results.
                 <br>
-                <br>
-                I have experience with Java, Spring Boot, PostgreSQL, Python, Vue.js, and more. I believe in lifelong
-                learning and I continually challenge myself to expand my skill set.
+                I currently have experience with Java, Spring Boot, PostgreSQL, Python, Vue.js, and more. As a lifelong
+                learner, I continually challenge myself to expand my skill set.
             </p>
-            <div id="icon-main-container">
-                <div>
-                    <img src="../assets/img/icons/PostgreSQL-logo.png" alt="">
-                    <img src="../assets/img/icons/Spring-Boot-logo.png" alt="">
-                </div>
-                <div>
-                    <img src="../assets/img/icons/JavaScript-logo.png" alt="">
-                    <img src="../assets/img/icons/Python-logo.webp" alt="">
-                    <img src="../assets/img/icons/java-logo.svg" alt="">
-                </div>
-                <div class="right">
-                    <img src="../assets/img/icons/supabase-logo.png" alt="">
-                    <img src="../assets/img/icons/vue-logo.svg" alt="">
-                </div>
-
-
-
-            </div>
         </div>
         <div id="vetra" class="project-view view">
             <aside>
                 <h2>VetRA</h2>
                 <p>
-                    A medical record and communication platform for veterinary practices and their clients.
+                    VetRA is a full stack application aimed at improving communication between
+                    veterinary clinics and clients by providing a messaging platform and enabling direct access to pet
+                    medical records.
                 </p>
-                <button class="go-button">Go to App</button>
-                <button class="go-button">Learn More</button>
+                <h3>API</h3>
+                <p>
+                    The VetRA API is a secure backend built with Java, Spring Boot, and PostgreSQL. It supports
+                    integration with the ezyVet API to automate access to pet medical records. It features strong
+                    authorization controls to serve the VetRA app's different user types.
+                </p>
+                <h3>App</h3>
+                <p>
+                    The VetRA Frontend is a responsive web application built with Vue.js, designed to give pet owners
+                    secure access to their pets' medical records. It enables users to view lab results, track
+                    medications, request refills, and communicate directly with their veterinary clinic.
+                </p>
             </aside>
             <section>
                 <img src="../assets/img/VetRA-Preview.png" alt="VetRA Image">
@@ -67,11 +60,11 @@
             <aside>
                 <h2>Kennel Map</h2>
                 <p>
-                    Application developed for Companion Animal Hospital to track and
-                    manage dog locations within the kennel.
+                    Kennel Map is a full stack web application developed for Companion Animal Hospital to track and
+                    manage dog locations within the kennel. Built with Vue.js and Supabase/PostgreSQL, it allows users
+                    to easily assign dogs to kennel runs and rearrange them using a drag-and-drop interface. Users can
+                    also save kennel layouts to help plan for busy periods.
                 </p>
-                <button class="go-button">Go to App</button>
-                <button class="go-button">Learn More</button>
 
             </aside>
             <section>
@@ -87,11 +80,13 @@
             <aside>
                 <h2>Date Stamp</h2>
                 <p>
-                    Browser extension created for Companion Animal Hospital to provide
-                    record-keeping tools for the ezyVet.
+                    Date Stamp is a browser extension created for Companion Animal Hospital to enhance the
+                    record-keeping capabilities of the ezyVet electronic medical records system. Initially developed as
+                    a simple timestamp tool, it has evolved to include multiple text insertion features and the ability
+                    to inject custom styles into the ezyVet interface, automatically highlighting records that meet
+                    time-sensitive criteria.
                 </p>
-                <button class="go-button">Go to App</button>
-                <button class="go-button">Learn More</button>
+
             </aside>
             <section>
                 <img src="../assets/img/Date-Stamp-Preview.png" alt="Date Stamp Image">
@@ -114,8 +109,6 @@ const showGreeting = ref(true);
 const showButton = ref(false);
 const showPortal = ref(true);
 const hidden = ref(false);
-const darken = ref(false);
-
 const aboutMe = useTemplateRef('about-me')
 
 const toggleGreeting = () => {
@@ -134,16 +127,12 @@ const gotToAboutMe = () => {
     aboutMe.value.scrollIntoView({ behavior: 'smooth' });
 }
 
-const toggleDarken = () => {
-    darken.value = !darken.value;
-}
+
 
 
 setTimeout(toggleGreeting, 3000)
 setTimeout(togglePortal, 4000)
 setTimeout(toggleButton, 4500)
-setTimeout(toggleDarken, 4500)
-
 
 </script>
 
@@ -159,9 +148,8 @@ setTimeout(toggleDarken, 4500)
     background-color: aliceblue;
 
     --container-color-1: rgba(0, 0, 255, 0);
-    --main-blue: #0290ef;
 
-    .view {
+    .view{
         background-color: var(--gray-9);
     }
 
@@ -203,7 +191,7 @@ setTimeout(toggleDarken, 4500)
 
         #name {
             font-size: 40px;
-            background-image: linear-gradient(to bottom left, #6bc4ff, #0e83ff);
+            background-image: linear-gradient(to bottom left, #007acc, #035ebf);
             color: transparent;
             background-clip: text;
             text-shadow: 3px 3px 0 rgba(70, 70, 70, 0.213);
@@ -249,40 +237,30 @@ setTimeout(toggleDarken, 4500)
             padding: 20px;
             padding-block: 5px;
             font-size: 20px;
-            background-color: transparent;
-            color: white;
-            border: none;
-            text-align: left;
-            font-size: 20px;
-            border-bottom: 2px solid white;
-            transition: all .3s ease;
-            padding: 10px;
+            background: transparent;
+            color: var(--foreground-color-1);
+            border: 2px solid #005999;
+            border-radius: 3px;
+            box-shadow: 0px 2px 7px -2px #1097f8;
             animation: fade-in-with-shadow 1s ease;
+            transition: all .2s;
             z-index: 1001;
         }
 
-        #about-me-button:hover {
-            top: calc(50% + 18px);
+        #about-me:hover {
+            transform: scale(1.1);
             cursor: pointer;
-            border-bottom: 16px solid var(--main-blue);
-            padding-bottom: 0px;
-            box-shadow: 0px 12px 0px -10px white;
+            box-shadow: 0px 0px 7px 0px #1097f8;
+
         }
 
 
     }
 
-    #welcome.dark {
-        background-color: var(--gray-9);
-        transition: all 1s ease;
-        color: white;
-
-        #cover {
-            background-color: var(--gray-9);
-            transition: all 1s ease;
-        }
+    #welcome-spacer {
+        height: 100vh;
+        background: linear-gradient(to bottom, var(--background-color-1), transparent)
     }
-
 
     #about-view {
         width: 100vw;
@@ -297,41 +275,8 @@ setTimeout(toggleDarken, 4500)
             width: 50vw;
             background-color: var(--container-color-1);
             padding: 20px;
-            padding-inline: 100px;
-            padding-left: 140px;
             border-radius: 20px;
             color: white;
-            line-height: 30px
-        }
-
-        #icon-main-container {
-            width: 50vw;
-            display: flex;
-            justify-content: center;
-            background-color: var(--container-color-1);
-            padding: 20px;
-            padding-top: 0px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-
-            div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-
-                img {
-                    height: 70px;
-                    border-radius: 20px;
-                    margin: 10px;
-                    background-color: rgb(255, 255, 255);
-                    padding: 5px;
-                    flex-shrink: 1;
-                }
-            }
-            
-            .right {
-                margin-right: 10vw;
-            }
         }
     }
 
@@ -339,7 +284,7 @@ setTimeout(toggleDarken, 4500)
         max-width: 100vw;
         height: 100vh;
         display: grid;
-        grid-template-columns: 2fr 3fr;
+        grid-template-columns: 1fr 2fr;
         scroll-snap-align: center;
         scroll-snap-stop: always;
         margin: 0px;
@@ -347,49 +292,16 @@ setTimeout(toggleDarken, 4500)
         aside {
             background-color: var(--container-color-1);
             color: aliceblue;
-            padding: 40px;
+            padding: 20px;
             margin-block: 6vh;
             border-top-right-radius: 20px;
             border-bottom-right-radius: 20px;
 
             h2 {
-                text-align: left;
+                text-align: center;
                 font-size: 50px;
-                background-image: linear-gradient(to bottom left, #7fccff, #238eff);
-                color: transparent;
-                background-clip: text;
-                text-shadow: 3px 3px 0 rgba(70, 70, 70, 0.213);
-            }
-
-            p {
-                margin-bottom: 20px;
-                font-size: 20px;
-            }
-
-            .go-button {
-                display: block;
-                margin-block: 20px;
-                width: 10em;
-                height: 3em;
-                background-color: transparent;
-                color: white;
-                border: none;
-                text-align: left;
-                font-size: 20px;
-                border-bottom: 2px solid white;
-                transition: all .3s ease;
-                padding: 10px
-            }
-
-            .go-button:hover {
-                border-bottom: 16px solid var(--main-blue);
-                padding-bottom: 0px;
-                cursor: pointer;
-                box-shadow: 0px 12px 0px -10px white;
             }
         }
-
-
 
         section {
             display: flex;
@@ -412,7 +324,7 @@ setTimeout(toggleDarken, 4500)
                 border-bottom-right-radius: 20px;
 
                 img {
-                    height: 70px;
+                    height: 100px;
                     border-radius: 20px;
                     margin: 10px;
                     background-color: rgb(255, 255, 255);
@@ -423,7 +335,6 @@ setTimeout(toggleDarken, 4500)
             }
         }
     }
-
 }
 
 #portfolio:hover {
@@ -481,15 +392,18 @@ setTimeout(toggleDarken, 4500)
 @keyframes fade-in-with-shadow {
     0% {
         opacity: 0;
+        box-shadow: 0px 0px 0px 0px #1097f8;
     }
 
     50% {
+        box-shadow: 0px 0px 0px 0px #1097f8;
         opacity: 1;
     }
 
     100% {
         opacity: 1;
 
+        box-shadow: 0px 2px 7px -2px #1097f8;
 
     }
 }
