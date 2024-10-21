@@ -50,8 +50,8 @@
                 <p>
                     A medical record and communication platform for veterinary practices and their clients.
                 </p>
-                <button class="go-button">Go to App</button>
-                <button class="go-button">Learn More</button>
+                <a class="go-button">Go to App</a>
+                <a class="go-button" href="https://github.com/bcblevins/Vetra-App" target="_blank">Learn More</a>
             </aside>
             <section>
                 <img src="../assets/img/VetRA-Preview.png" alt="VetRA Image">
@@ -70,8 +70,8 @@
                     Application developed for Companion Animal Hospital to track and
                     manage dog locations within the kennel.
                 </p>
-                <button class="go-button">Go to App</button>
-                <button class="go-button">Learn More</button>
+                <a class="go-button">Go to App</a>
+                <a class="go-button" href="https://github.com/bcblevins/KennelMap" target="_blank"  >Learn More</a>
 
             </aside>
             <section>
@@ -88,10 +88,10 @@
                 <h2>Date Stamp</h2>
                 <p>
                     Browser extension created for Companion Animal Hospital to provide
-                    record-keeping tools for the ezyVet.
+                    record-keeping tools for ezyVet.
                 </p>
-                <button class="go-button">Go to App</button>
-                <button class="go-button">Learn More</button>
+                <a class="go-button" href="https://chromewebstore.google.com/detail/date-stamp/iellafhafghhpjjmolndilnlfkkpigco?hl=en-US" target="_blank" >View in Store</a>
+                <a class="go-button" href="https://github.com/bcblevins/DateStamp" target="_blank" >Learn More</a>
             </aside>
             <section>
                 <img src="../assets/img/Date-Stamp-Preview.png" alt="Date Stamp Image">
@@ -358,7 +358,6 @@ setTimeout(toggleDarken, 4500)
                 background-image: linear-gradient(to bottom left, #7fccff, #238eff);
                 color: transparent;
                 background-clip: text;
-                text-shadow: 3px 3px 0 rgba(70, 70, 70, 0.213);
             }
 
             p {
@@ -370,7 +369,7 @@ setTimeout(toggleDarken, 4500)
                 display: block;
                 margin-block: 20px;
                 width: 10em;
-                height: 3em;
+                height: 1.2em;
                 background-color: transparent;
                 color: white;
                 border: none;
@@ -378,7 +377,8 @@ setTimeout(toggleDarken, 4500)
                 font-size: 20px;
                 border-bottom: 2px solid white;
                 transition: all .3s ease;
-                padding: 10px
+                padding: 10px;
+                text-decoration: none;
             }
 
             .go-button:hover {
@@ -386,6 +386,7 @@ setTimeout(toggleDarken, 4500)
                 padding-bottom: 0px;
                 cursor: pointer;
                 box-shadow: 0px 12px 0px -10px white;
+                color: cyan;
             }
         }
 
