@@ -40,6 +40,7 @@
                     <img src="../assets/img/icons/vue-logo.svg" alt="">
                 </div>
             </div>
+            <img class="arrow" src="../assets/img/icons/arrow.svg" alt="">
         </div>
         <div id="vetra" class="project-view view">
             <aside>
@@ -59,6 +60,7 @@
                     <img src="../assets/img/icons/vue-logo.svg" alt="">
                 </div>
             </section>
+            <img class="arrow" src="../assets/img/icons/arrow.svg" alt="">
         </div>
         <div id="kennel-map" class="project-view view">
             <aside>
@@ -78,9 +80,9 @@
                     <img src="../assets/img/icons/supabase-logo.png" alt="">
                 </div>
             </section>
+            <img class="arrow" src="../assets/img/icons/arrow.svg" alt="">
         </div>
         <div id="date-stamp" class="project-view view">
-
             <aside>
                 <h2>Date Stamp</h2>
                 <p>
@@ -160,6 +162,14 @@ setTimeout(toggleDarken, 4500)
 
     .view {
         background-color: var(--gray-9);
+        position: relative;
+
+        .arrow {
+            position: absolute;
+            width: 100px;
+            bottom: 0px;
+            left: calc(50% - 50px);
+            animation: bounce 2s infinite linear;        }
     }
 
     #welcome {
@@ -500,6 +510,17 @@ setTimeout(toggleDarken, 4500)
     50%,
     100% {
         transform: translateY(20vh);
+    }
+}
+
+@keyframes bounce {
+    0%, 50% {
+        transform: translateY(40px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
     }
 }
 </style>
