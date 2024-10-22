@@ -39,9 +39,6 @@
                     <img src="../assets/img/icons/supabase-logo.png" alt="">
                     <img src="../assets/img/icons/vue-logo.svg" alt="">
                 </div>
-
-
-
             </div>
         </div>
         <div id="vetra" class="project-view view">
@@ -50,7 +47,7 @@
                 <p>
                     A medical record and communication platform for veterinary practices and their clients.
                 </p>
-                <a class="go-button">Go to App</a>
+                <a class="go-button" href="https://bcblevins.github.io/Vetra-App/" target="_blank" >Go to App</a>
                 <a class="go-button" href="https://github.com/bcblevins/Vetra-App" target="_blank">Learn More</a>
             </aside>
             <section>
@@ -70,7 +67,7 @@
                     Application developed for Companion Animal Hospital to track and
                     manage dog locations within the kennel.
                 </p>
-                <a class="go-button">Go to App</a>
+                <a class="go-button" href="https://bcblevins.github.io/KennelMap/" target="_blank" >Go to App</a>
                 <a class="go-button" href="https://github.com/bcblevins/KennelMap" target="_blank"  >Learn More</a>
 
             </aside>
