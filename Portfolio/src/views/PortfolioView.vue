@@ -157,20 +157,10 @@ setTimeout(toggleDarken, 4500)
 
     background-color: aliceblue;
 
-    --container-color-1: rgba(0, 0, 255, 0);
+    --container-color-1: rgba(0, 0, 0, 0.183);
     --main-blue: #0290ef;
 
-    .view {
-        background-color: var(--gray-9);
-        position: relative;
 
-        .arrow {
-            position: absolute;
-            width: 100px;
-            bottom: 0px;
-            left: calc(50% - 50px);
-            animation: bounce 2s infinite linear;        }
-    }
 
     #welcome {
         height: 100vh;
@@ -290,6 +280,17 @@ setTimeout(toggleDarken, 4500)
         }
     }
 
+    .view {
+        background-color: var(--gray-9);
+        position: relative;
+
+        .arrow {
+            position: absolute;
+            width: 100px;
+            bottom: 0px;
+            left: calc(50% - 50px);
+            animation: bounce 2s infinite linear;        }
+    }
 
     #about-view {
         width: 100vw;
@@ -315,6 +316,7 @@ setTimeout(toggleDarken, 4500)
             width: 50vw;
             display: flex;
             justify-content: center;
+            align-items: center;
             background-color: var(--container-color-1);
             padding: 20px;
             padding-top: 0px;
@@ -356,8 +358,7 @@ setTimeout(toggleDarken, 4500)
             color: aliceblue;
             padding: 40px;
             margin-block: 6vh;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
+
 
             h2 {
                 text-align: left;
@@ -413,6 +414,7 @@ setTimeout(toggleDarken, 4500)
             .icon-container {
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 background-color: var(--container-color-1);
                 padding: 20px;
                 padding-top: 0px;
@@ -434,11 +436,85 @@ setTimeout(toggleDarken, 4500)
 
 }
 
-#portfolio:hover {
-    /* Move the background while scrolling (simulated parallax effect) */
-    background-position: 0% 100;
-}
+@media only screen and (max-width: 600px) {
+    #portfolio {
 
+        #welcome {
+
+            #my-name {
+
+                #name {
+                    display: block;
+                }
+            }
+        }
+
+
+
+        #about-view {
+            flex-direction: column;
+
+            p {
+                width: 90vw;
+                padding: 20px;
+            }
+
+            #icon-main-container {
+                width: 90%;
+                padding: 20px;
+                align-items: center;
+
+                .right {
+                    margin: 0px;
+                }
+            }
+        }
+
+        .project-view {
+            display: flex;
+            flex-direction: column;
+
+            aside {
+                margin: 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-block: 0px;
+
+                h2 {
+                    text-align: center;
+                }
+
+                p {
+                    text-align: center;
+                }
+
+                .go-button {
+                    text-align: center;
+                    display: inline-block;
+                }
+            }
+
+            section {
+
+                .icon-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+
+                    img {
+                        flex-basis: 70px;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+        }
+    }
+    
+}
 
 @keyframes slide-in-up-out {
 
