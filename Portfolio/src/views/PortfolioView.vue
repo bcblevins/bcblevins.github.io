@@ -16,28 +16,31 @@
 
         </div> -->
         <div id="about-view" class="view">
-            <p ref="about-me">
-                I'm a Full Stack Developer with a passion for building useful, scalable software that
-                are a joy for users to interact with. I approach challenges without hesitation, leveraging
-                my technical expertise, creativity, and love of problem solving to produce results.
-                <br>
-                <br>
-                I have experience with Java, Spring Boot, PostgreSQL, Python, Vue.js, and more. I believe in lifelong
-                learning and I continually challenge myself to expand my skill set.
-            </p>
-            <div id="icon-main-container">
-                <div>
-                    <img src="../assets/img/icons/PostgreSQL-logo.png" alt="">
-                    <img src="../assets/img/icons/Spring-Boot-logo.png" alt="">
-                </div>
-                <div>
-                    <img src="../assets/img/icons/JavaScript-logo.png" alt="">
-                    <img src="../assets/img/icons/Python-logo.webp" alt="">
-                    <img src="../assets/img/icons/java-logo.svg" alt="">
-                </div>
-                <div class="right">
-                    <img src="../assets/img/icons/supabase-logo.png" alt="">
-                    <img src="../assets/img/icons/vue-logo.svg" alt="">
+            <div id="about-container" >
+                <p ref="about-me">
+                    I'm a Full Stack Developer with a passion for building useful, scalable software that
+                    are a joy for users to interact with. I approach challenges without hesitation, leveraging
+                    my technical expertise, creativity, and love of problem solving to produce results.
+                    <br>
+                    <br>
+                    I have experience with <span id="skill-list" > Java, Spring Boot, PostgreSQL, Python, Vue.js, </span> and more. I believe in
+                    lifelong
+                    learning and I continually challenge myself to expand my skill set.
+                </p>
+                <div id="icon-main-container">
+                    <div>
+                        <img src="../assets/img/icons/PostgreSQL-logo.png" alt="">
+                        <img src="../assets/img/icons/Spring-Boot-logo.png" alt="">
+                    </div>
+                    <div>
+                        <img src="../assets/img/icons/JavaScript-logo.png" alt="">
+                        <img src="../assets/img/icons/Python-logo.webp" alt="">
+                        <img src="../assets/img/icons/java-logo.svg" alt="">
+                    </div>
+                    <div class="right">
+                        <img src="../assets/img/icons/supabase-logo.png" alt="">
+                        <img src="../assets/img/icons/vue-logo.svg" alt="">
+                    </div>
                 </div>
             </div>
             <img class="arrow" src="../assets/img/icons/arrow.svg" alt="">
@@ -48,7 +51,7 @@
                 <p>
                     A medical record and communication platform for veterinary practices and their clients.
                 </p>
-                <a class="go-button" href="https://bcblevins.github.io/Vetra-App/" target="_blank" >Go to App</a>
+                <a class="go-button" href="https://bcblevins.github.io/Vetra-App/" target="_blank">Go to App</a>
                 <a class="go-button" href="https://github.com/bcblevins/Vetra-App" target="_blank">Learn More</a>
             </aside>
             <section>
@@ -69,8 +72,8 @@
                     Application developed for Companion Animal Hospital to track and
                     manage dog locations within the kennel.
                 </p>
-                <a class="go-button" href="https://bcblevins.github.io/KennelMap/" target="_blank" >Go to App</a>
-                <a class="go-button" href="https://github.com/bcblevins/KennelMap" target="_blank"  >Learn More</a>
+                <a class="go-button" href="https://bcblevins.github.io/KennelMap/demo" target="_blank">Go to App</a>
+                <a class="go-button" href="https://github.com/bcblevins/KennelMap" target="_blank">Learn More</a>
 
             </aside>
             <section>
@@ -89,8 +92,10 @@
                     Browser extension created for Companion Animal Hospital to provide
                     record-keeping tools for ezyVet.
                 </p>
-                <a class="go-button" href="https://chromewebstore.google.com/detail/date-stamp/iellafhafghhpjjmolndilnlfkkpigco?hl=en-US" target="_blank" >View in Store</a>
-                <a class="go-button" href="https://github.com/bcblevins/DateStamp" target="_blank" >Learn More</a>
+                <a class="go-button"
+                    href="https://chromewebstore.google.com/detail/date-stamp/iellafhafghhpjjmolndilnlfkkpigco?hl=en-US"
+                    target="_blank">View in Store</a>
+                <a class="go-button" href="https://github.com/bcblevins/DateStamp" target="_blank">Learn More</a>
             </aside>
             <section>
                 <img src="../assets/img/Date-Stamp-Preview.png" alt="Date Stamp Image">
@@ -157,7 +162,7 @@ setTimeout(toggleDarken, 4500)
 
     background-color: aliceblue;
 
-    --container-color-1: rgba(0, 0, 0, 0.183);
+    --container-color-1: rgba(0, 0, 0, 0.199);
     --main-blue: #0290ef;
 
 
@@ -289,7 +294,8 @@ setTimeout(toggleDarken, 4500)
             width: 100px;
             bottom: 0px;
             left: calc(50% - 50px);
-            animation: bounce 2s infinite linear;        }
+            animation: bounce 2s infinite linear;
+        }
     }
 
     #about-view {
@@ -300,46 +306,60 @@ setTimeout(toggleDarken, 4500)
         align-items: center;
         scroll-snap-align: center;
 
-
-        p {
-            width: 50vw;
+        #about-container {
             background-color: var(--container-color-1);
-            padding: 20px;
-            padding-inline: 100px;
-            padding-left: 140px;
-            border-radius: 20px;
-            color: white;
-            line-height: 30px
-        }
-
-        #icon-main-container {
-            width: 50vw;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--container-color-1);
-            padding: 20px;
-            padding-top: 0px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
+            justify-content: space-around;
+            padding-block: 20px;
 
-            div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
 
-                img {
-                    height: 70px;
-                    border-radius: 20px;
-                    margin: 10px;
-                    background-color: rgb(255, 255, 255);
-                    padding: 5px;
-                    flex-shrink: 1;
+            p {
+                margin-left: 10vw;
+                width: 40vw;
+                padding: 20px;
+                padding-inline: 100px;
+                padding-left: 140px;
+                border-radius: 20px;
+                color: white;
+                line-height: 30px;
+
+                #skill-list {
+                    font-weight: 600;
+                    background-image: linear-gradient(to bottom left, #6bc4ff, #0e83ff);
+                    color: transparent;
+                    background-clip: text;
+                    font-size: larger;
                 }
             }
-            
-            .right {
-                margin-right: 10vw;
+
+            #icon-main-container {
+                width: 50vw;
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+                padding-top: 0px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    img {
+                        height: 70px;
+                        border-radius: 20px;
+                        margin: 10px;
+                        background-color: rgb(255, 255, 255);
+                        padding: 5px;
+                        flex-shrink: 1;
+                    }
+                }
+
+                .right {
+                    margin-right: 10vw;
+                }
+
             }
         }
     }
@@ -513,7 +533,7 @@ setTimeout(toggleDarken, 4500)
 
         }
     }
-    
+
 }
 
 @keyframes slide-in-up-out {
@@ -590,10 +610,13 @@ setTimeout(toggleDarken, 4500)
 }
 
 @keyframes bounce {
-    0%, 50% {
+
+    0%,
+    50% {
         transform: translateY(40px);
         opacity: 1;
     }
+
     100% {
         transform: translateY(-20px);
         opacity: 0;
