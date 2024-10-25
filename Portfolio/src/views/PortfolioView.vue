@@ -16,14 +16,15 @@
 
         </div> -->
         <div id="about-view" class="view">
-            <div id="about-container" >
+            <div id="about-container">
                 <p ref="about-me">
                     I'm a Full Stack Developer with a passion for building useful, scalable software that
                     are a joy for users to interact with. I approach challenges without hesitation, leveraging
                     my technical expertise, creativity, and love of problem solving to produce results.
                     <br>
                     <br>
-                    I have experience with <span id="skill-list" > Java, Spring Boot, PostgreSQL, Python, Vue.js, </span> and more. I believe in
+                    I have experience with <span id="skill-list"> Java, Spring Boot, PostgreSQL, Python, Vue.js, </span>
+                    and more. I believe in
                     lifelong
                     learning and I continually challenge myself to expand my skill set.
                 </p>
@@ -474,18 +475,23 @@ setTimeout(toggleDarken, 4500)
         #about-view {
             flex-direction: column;
 
-            p {
-                width: 90vw;
-                padding: 20px;
-            }
-
-            #icon-main-container {
-                width: 90%;
-                padding: 20px;
-                align-items: center;
-
-                .right {
+            #about-container {
+                display: flex;
+                flex-direction: column;
+                p {
+                    width: 90vw;
+                    padding: 20px;
                     margin: 0px;
+                }
+
+                #icon-main-container {
+                    width: 90%;
+                    padding: 20px;
+                    align-items: center;
+
+                    .right {
+                        margin: 0px;
+                    }
                 }
             }
         }
