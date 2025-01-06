@@ -23,7 +23,7 @@
                     my technical expertise, creativity, and love of problem solving to produce results.
                     <br>
                     <br>
-                    I have experience with <span id="skill-list"> Java, Spring Boot, PostgreSQL, Python, Vue.js, </span>
+                    I have experience with <span id="skill-list"> Vue.js, React.js, Java, Spring Boot, PostgreSQL, Python, </span>
                     and more. I believe in
                     lifelong
                     learning and I continually challenge myself to expand my skill set.
@@ -39,7 +39,7 @@
                         <img src="../assets/img/icons/java-logo.svg" alt="">
                     </div>
                     <div class="right">
-                        <img src="../assets/img/icons/supabase-logo.png" alt="">
+                        <img src="../assets/img/icons/react-logo.svg" alt="">
                         <img src="../assets/img/icons/vue-logo.svg" alt="">
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                 <p>
                     A medical record and communication platform for veterinary practices and their clients.
                 </p>
-                <a id="go-vetra" class="go-button" href="https://bcblevins.github.io/Vetra-App/" target="_blank">Go to App</a>
+                <a id="go-vetra" class="go-button" href="https://bcblevins.github.io/Vetra-App/" target="_blank">Coming soon</a>
                 <a class="go-button" href="https://github.com/bcblevins/Vetra-App" target="_blank">Learn More</a>
             </aside>
             <section>
@@ -62,6 +62,24 @@
                     <img src="../assets/img/icons/Spring-Boot-logo.png" alt="">
                     <img src="../assets/img/icons/PostgreSQL-logo.png" alt="">
                     <img src="../assets/img/icons/vue-logo.svg" alt="">
+                </div>
+            </section>
+            <img class="arrow" src="../assets/img/icons/arrow.svg" alt="">
+        </div>
+                <div id="vetra" class="project-view view">
+            <aside>
+                <h2>DailyPlate</h2>
+                <p>
+                    Mobile webapp to help users track food intake with the goal of eating a nutritionally balanced diet.
+                </p>
+                <a id="go-dailyplate" class="go-button" href="" target="_blank">Coming soon</a>
+                <a class="go-button" href="https://github.com/bcblevins/daily-plate" target="_blank">Learn More</a>
+            </aside>
+            <section>
+                <img src="../assets/img/DailyPlate-preview.png" alt="DailyPlate Image">
+                <div class="icon-container">
+                    <img src="../assets/img/icons/react-logo.svg" alt="">
+                    <img src="../assets/img/icons/supabase-logo.png" alt="">
                 </div>
             </section>
             <img class="arrow" src="../assets/img/icons/arrow.svg" alt="">
@@ -163,7 +181,7 @@ setTimeout(toggleDarken, 4500)
 
     background-color: aliceblue;
 
-    --container-color-1: rgba(0, 0, 0, 0.199);
+    --container-color-1: rgba(0, 0, 0, 0.417);
     --main-blue: #0290ef;
 
 
@@ -376,6 +394,8 @@ setTimeout(toggleDarken, 4500)
 
         aside {
             background-color: var(--container-color-1);
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
             color: aliceblue;
             padding: 40px;
             margin-block: 6vh;
@@ -420,19 +440,22 @@ setTimeout(toggleDarken, 4500)
                 color: cyan;
             }
 
-            #go-vetra {
+            #go-vetra, #go-dailyplate {
                 color: grey;
                 pointer-events: none;
-                border-bottom: 2px solid grey
+                border-bottom: 2px solid grey;
+                position: relative;
             }
 
-            #go-vetra:hover {
+
+            #go-vetra:hover, #go-dailyplate:hover {
                 border-bottom: none;
                 padding-bottom: 10px;
                 cursor: not-allowed;
                 box-shadow: none;
                 color: grey;
             }
+            
         }
 
 
@@ -446,6 +469,7 @@ setTimeout(toggleDarken, 4500)
 
             img {
                 width: calc(100% - 40px);
+                border-radius: 20px;
             }
 
             .icon-container {
