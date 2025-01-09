@@ -80,6 +80,7 @@
                 <div class="icon-container">
                     <img src="../assets/img/icons/react-logo.svg" alt="">
                     <img src="../assets/img/icons/supabase-logo.png" alt="">
+                    <img src="../assets/img/icons/PostgreSQL-logo.png" alt="">
                 </div>
             </section>
             <img class="arrow" src="../assets/img/icons/arrow.svg" alt="">
@@ -91,7 +92,7 @@
                     Application developed for Companion Animal Hospital to track and
                     manage dog locations within the kennel.
                 </p>
-                <a class="go-button" href="https://bcblevins.github.io/KennelMap/demo" target="_blank">Go to App</a>
+                <a class="go-button" href="https://bcblevins.github.io/KennelMap" target="_blank">Go to App</a>
                 <a class="go-button" href="https://github.com/bcblevins/KennelMap" target="_blank">Learn More</a>
 
             </aside>
