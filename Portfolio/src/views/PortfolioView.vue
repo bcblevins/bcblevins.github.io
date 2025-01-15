@@ -52,7 +52,7 @@
                 <p>
                     A medical record and communication platform for veterinary practices and their clients.
                 </p>
-                <a id="go-vetra" class="go-button" href="https://bcblevins.github.io/Vetra-App/" target="_blank">Coming soon</a>
+                <a id="go-vetra" class="go-button" href="https://bcblevins.github.io/Vetra-App/" target="_blank">Go to App</a>
                 <a class="go-button" href="https://github.com/bcblevins/Vetra-App" target="_blank">Learn More</a>
             </aside>
             <section>
@@ -179,6 +179,13 @@ setTimeout(toggleDarken, 4500)
     height: 100vh;
     overflow: scroll;
     scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+
+    .container {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+
 
     background-color: aliceblue;
 
@@ -441,7 +448,7 @@ setTimeout(toggleDarken, 4500)
                 color: cyan;
             }
 
-            #go-vetra, #go-dailyplate {
+            #go-dailyplate {
                 color: grey;
                 pointer-events: none;
                 border-bottom: 2px solid grey;
@@ -449,7 +456,7 @@ setTimeout(toggleDarken, 4500)
             }
 
 
-            #go-vetra:hover, #go-dailyplate:hover {
+            #go-dailyplate:hover {
                 border-bottom: none;
                 padding-bottom: 10px;
                 cursor: not-allowed;
